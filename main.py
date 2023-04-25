@@ -47,7 +47,7 @@ SANJICOOK = [
 
 @app.get("/waifuvid")
 def pnude():
-    pic = random.choice(WAIFUVID)
+    GIF = random.choice(WAIFUVID)
     return {"url" : GIF}
 
 @app.get("/sanjicook")
