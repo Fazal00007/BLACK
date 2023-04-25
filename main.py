@@ -43,7 +43,8 @@ WAIFUVID = [
            ]
 
 SANJICOOK = [ 
-             "https://graph.org/file/639514a0c538160de520f.mp4" 
+             "https://graph.org/file/639514a0c538160de520f.mp4"
+             "https://te.legra.ph/file/047a3d44775eb65e8f5c3.mp4" 
             ]
 
 @app.get("/waifuvid")
