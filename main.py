@@ -23,7 +23,23 @@ WAIFUVID = [
             "https://te.legra.ph/file/4fd573b2036565add3070.mp4"
             "https://te.legra.ph/file/d01a4a03f911cb4e70fd8.mp4"
             "https://te.legra.ph/file/bd8e486867bd206cd5ed4.mp4"
-           
+            "https://te.legra.ph/file/d9e6eb7c455b3fbe7408d.mp4"
+            "https://te.legra.ph/file/0e4ebae9b45da9234bcd1.mp4"
+            "https://te.legra.ph/file/5e99a529405866a5838cb.mp4"
+            "https://te.legra.ph/file/436bceb69f9b31bbaac79.mp4"
+            "https://te.legra.ph/file/0b8cc2082ef13cbead1fd.mp4"
+            "https://te.legra.ph/file/ece2a9bef9194eaeb2815.mp4"
+            "https://te.legra.ph/file/4ce0b8c9c0ca2e9cbbe33.mp4"
+            "https://te.legra.ph/file/01031fe726a39699e8a3d.mp4"
+            "https://te.legra.ph/file/51e6fc6e611d716614c2c.mp4"
+            "https://te.legra.ph/file/4aae4f4b396556e7bd972.mp4"
+            "https://te.legra.ph/file/1a06cd971ba40872a432b.mp4"
+            "https://te.legra.ph/file/83687b6a1310f7c8090e8.mp4"
+            "https://te.legra.ph/file/8f846a6b96ff6abd7bba3.mp4"
+            "https://te.legra.ph/file/bc8e5655c459d7357fde8.mp4"
+            "https://te.legra.ph/file/e0d13eead0d43e695d616.mp4"
+            "https://te.legra.ph/file/b49b82604bfc0b319d400.mp4"
+
            ]
 
 SANJICOOK = [ 
