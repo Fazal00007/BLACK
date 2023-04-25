@@ -4,7 +4,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 WAIFUVID = [
- 
             "https://graph.org/file/4aa0c68c9ff4df2a75790.mp4",
             "https://graph.org/file/ce4181abc0bda8c67ba71.mp4" ,
             "https://te.legra.ph/file/e14a90e57c83a98eb84d2.mp4",
@@ -39,8 +38,7 @@ WAIFUVID = [
             "https://te.legra.ph/file/bc8e5655c459d7357fde8.mp4",
             "https://te.legra.ph/file/e0d13eead0d43e695d616.mp4",
             "https://te.legra.ph/file/b49b82604bfc0b319d400.mp4",
-
-           ]
+            ]
 
 SANJICOOK = [ 
              "https://graph.org/file/639514a0c538160de520f.mp4",
