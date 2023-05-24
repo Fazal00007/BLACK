@@ -38,6 +38,20 @@ WAIFUVID = [
             "https://te.legra.ph/file/bc8e5655c459d7357fde8.mp4",
             "https://te.legra.ph/file/e0d13eead0d43e695d616.mp4",
             "https://te.legra.ph/file/b49b82604bfc0b319d400.mp4",
+            "https://te.legra.ph/file/983b3e7642e0bbc93e97f.mp4",
+            "https://te.legra.ph/file/752799e7cfe4c12674f9d.mp4",
+            "https://te.legra.ph/file/c06735e58f46e4b168a58.mp4",
+            "https://te.legra.ph/file/796f4f46789bfaf75f538.mp4",
+            "https://te.legra.ph/file/2ca09922b7deb6a95bd9e.mp4",
+            "https://te.legra.ph/file/42f621d1d2c541599022b.mp4",
+            "https://te.legra.ph/file/00cf3356f99f53190e55c.mp4",
+            "https://te.legra.ph/file/b2eb0c7dc7894e5504758.mp4",
+            "https://te.legra.ph/file/10a572143677c2d1591d0.mp4",
+            "https://te.legra.ph/file/1b9b014bab8597903a162.mp4",
+            "https://te.legra.ph/file/121b33804ca9af0ed46c5.mp4",
+            "https://te.legra.ph/file/d2d24ec985cd58576086b.mp4",
+            "https://te.legra.ph/file/925c8224d61ed4600b125.mp4",
+            "https://te.legra.ph/file/ae2ae3453e637b28f4b55.mp4",
             ]
 
 SANJICOOK = [ 
