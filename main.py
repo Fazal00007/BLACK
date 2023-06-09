@@ -104,7 +104,7 @@ def gnude():
     return {"url" : GIF}
 
 
-//This repo is made by github.com/awesome-tofu. if u use it, give credit else I'm your mother fucker!
+# This repo is made by github.com/awesome-tofu. if u use it, give credit else I'm your mother fucker!
 
 const axios = require("axios");
 const cheerio = require("cheerio");
