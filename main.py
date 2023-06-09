@@ -102,3 +102,72 @@ def pnude():
 def gnude():
     GIF = random.choice(SANJICOOK)
     return {"url" : GIF}
+
+
+//This repo is made by github.com/awesome-tofu. if u use it, give credit else I'm your mother fucker!
+
+const axios = require("axios");
+const cheerio = require("cheerio");
+const express = require("express");
+
+const app = express();
+
+function pinterest(querry) {	
+	return new Promise(async (resolve, reject) => {	
+		axios.get('https://in.pinterest.com/search/pins/?autologin=true&q=' + querry, {	
+			headers: {	
+				"cookie": "_auth=1; _routing_id=\"8baa0b1a-21c7-4fae-9499-294582450c74\"; cm_sub=none; csrftoken=59f105d85c574a3e3e921b621238472d; _b=\"AWoYsIsgGnBE0Yqvt6pcO/ZaCZZdBI7tGHp6QVTHUrAuF6cBI0OZSKNSTPuWj6El43g=\"; _pinterest_sess=TWc9PSY4bW51cjJGNk1sQXdPcjc2cURoNXExTzVmOEdlbmVyT0tjUDcydUVUcHdNUmtKZlVnN0htYXdHR3orM3VaNVg1VUxGeVRBL00xemswRkZnV2hRRGdHUThRTVRHSmIybzlGdHA3MEdvK3hBOEdVNE5HNm1uTXdwWHVWQloyZGExSlFYZDBQeTBnWmV0eGtmM05rRjlaeUVZUG84dlZHd1RRTy8vVlpYS29EMysrVUxUd1duM1NoaVFTOUozNklWKzBXU05yQjN3YVBWSE54aUdYTm04bzJPUlljaHVVblEyRXBvTTB5OFN2MSsrUTF4b215MFdjVUJTTi9BeGtON3p1TlRrbXA2bHpDdzZPMXQ5Vzk4RkdkWHhVVzRLL2lmMGYyNXZuY3VKeGdwNVZTOXZyMGJRNWwzQXNSbVVudk1IbEZEL1V1bU5NdmtoSnhiQUF5RjZjcmhwaHdndWVPQkluRSt0a2pIdFVGdEZQUkRiTlM2NjJTRTdUeUxqb1BFV2l4bDRUbjNtcnQvc1RmQXcyZTdFZG53PT0mQnNDb09xdi9yMUtVZDE5UUppWG9lRmdtdGlVPQ==; sessionFunnelEventLogged=1; _ir=0"	
+			}	
+		}).then(({	
+			data	
+		}) => {	
+			const $ = cheerio.load(data)	
+			const result = [];	
+			const hasil = [];	
+			$('div > a').get().map(b => {	
+				const link = $(b).find('img').attr('src')	
+				result.push(link)	
+			});	
+			result.forEach(v => {	
+				if (v == undefined) return	
+				hasil.push(v.replace(/236/g, '736'))	
+			})	
+			hasil.shift();	
+			resolve(hasil)	
+		})	
+	})	
+}
+app.get('/',(req,res)=>{
+	const input = req.query.q;
+	// console.log(input)
+	let pinarray= [];
+    pinterest(input)
+  .then((result) => {
+    pinarray.push(result);
+	const maxCharLength = 71;
+	const filteredImages = pinarray[0].filter(imagee => imagee.length <= maxCharLength);
+	if(input==undefined){
+		res.send({
+			author:"https://aditya-info.me",
+			default_img:filteredImages,
+			images:"https://te.legra.ph/file/4c6785bad56a2b137ddd3.png",
+			error:"lmao bruhh! no query?"
+		})
+	}else{
+			res.send(
+		{   
+			author:"https://aditya-info.me",
+			images:filteredImages,
+			count:filteredImages.length
+		}
+		)}
+  })
+  .catch((error) => {
+    pinarray.push(error);
+    console.log(error);
+  });
+})
+
+const PORT = 3000;
+
+app.listen(PORT, () => console.log('Listening on port http://localhost:3000'));
