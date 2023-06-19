@@ -105,7 +105,7 @@ def gnude():
     return {"url" : GIF}
 
 def kiss(query, limit=1):
-    api_key = "AIzaSyBZKXKdVfZWPnEfiBMyMUx5kfL5TQiflYw"
+    api_key = "AIzaSyDLY6gywwY_MswUJDdwe_BjtBvE2JZhpMA"
     url = "https://api.tenor.com/v1/search"
 
     params = {
