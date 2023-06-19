@@ -102,3 +102,27 @@ def pnude():
 def gnude():
     GIF = random.choice(SANJICOOK)
     return {"url" : GIF}
+
+def kiss(query, limit=1):
+    api_key = "AIzaSyBZKXKdVfZWPnEfiBMyMUx5kfL5TQiflYw"
+    url = "https://api.tenor.com/v1/search"
+
+    params = {
+        "key": api_key,
+        "q": query,
+        "limit": limit
+    }
+
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        gifs = data.get("results", [])
+        return gifs
+    else:
+        print("Error fetching GIFs:", response.status_code)
+        return []
+
+gifs = kiss("kiss", limit=1)
+for gif in gifs:
+    print(gif["url"])
+
