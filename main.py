@@ -1,6 +1,7 @@
 import random
 import requests
-from fastapi import FastAPI
+import httpx
+from fastapi import FastAPI , Request
 
 app = FastAPI()
 
@@ -104,26 +105,19 @@ def gnude():
     GIF = random.choice(SANJICOOK)
     return {"url" : GIF}
 
-def kiss(query, limit=1):
+@app.get("/gif")
+def tenor(request: Request , q: str = None):
+	alpha = request.query_params.get('q', '')
     api_key = "AIzaSyDLY6gywwY_MswUJDdwe_BjtBvE2JZhpMA"
-    url = "https://api.tenor.com/v1/search"
-
-    params = {
-        "key": api_key,
-        "q": query,
-        "limit": limit
-    }
-
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        data = response.json()
-        gifs = data.get("results", [])
-        return gifs
-    else:
-        print("Error fetching GIFs:", response.status_code)
-        return []
-
-gifs = kiss("kiss", limit=1)
-for gif in gifs:
-    print(gif["url"])
-
+    lmt = 1
+    ckey = "alpha_coder"
+    url = "https://tenor.googleapis.com/v2/search?q={alpha}&key={apikey}&client_key={ckey}&limit={lmt}"
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            gif_url = data['results'][0]['media_formats']['tinygif']['url']
+            return {'gif_url': gif_url}
+        else:
+            return {'error': 'Failed to fetch the GIF URL.'}
+    
