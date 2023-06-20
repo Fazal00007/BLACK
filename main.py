@@ -109,7 +109,7 @@ def gnude():
 async def tenor(request: Request, q: str = None):
     alpha = request.query_params.get('q', '')
     api_key = "AIzaSyDLY6gywwY_MswUJDdwe_BjtBvE2JZhpMA"
-    lmt = 100
+    lmt = 50
     ckey = "alpha_coder"
     url = f"https://tenor.googleapis.com/v2/search?q={alpha}&key={api_key}&client_key={ckey}&limit={lmt}"
     async with httpx.AsyncClient() as client:
