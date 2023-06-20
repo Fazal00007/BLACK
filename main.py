@@ -106,12 +106,12 @@ def gnude():
     return {"url" : GIF}
 
 @app.get("/gif")
-def tenor(request: Request , q: str = None):
-	alpha = request.query_params.get('q', '')
+async def tenor(request: Request, q: str = None):
+    alpha = request.query_params.get('q', '')
     api_key = "AIzaSyDLY6gywwY_MswUJDdwe_BjtBvE2JZhpMA"
     lmt = 1
     ckey = "alpha_coder"
-    url = "https://tenor.googleapis.com/v2/search?q={alpha}&key={apikey}&client_key={ckey}&limit={lmt}"
+    url = f"https://tenor.googleapis.com/v2/search?q={alpha}&key={api_key}&client_key={ckey}&limit={lmt}"
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
         if response.status_code == 200:
@@ -120,4 +120,3 @@ def tenor(request: Request , q: str = None):
             return {'gif_url': gif_url}
         else:
             return {'error': 'Failed to fetch the GIF URL.'}
-    
