@@ -50,6 +50,7 @@ WAIFUVID = [
             "https://te.legra.ph/file/b2eb0c7dc7894e5504758.mp4",
             "https://te.legra.ph/file/10a572143677c2d1591d0.mp4",
             "https://te.legra.ph/file/1b9b014bab8597903a162.mp4",
+            "https://telegra.ph//file/9ffdd1d11fea1018281f5.mp4",
             "https://te.legra.ph/file/121b33804ca9af0ed46c5.mp4",
             "https://te.legra.ph/file/d2d24ec985cd58576086b.mp4",
             "https://te.legra.ph/file/925c8224d61ed4600b125.mp4",
