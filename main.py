@@ -1,4 +1,4 @@
-import random
+import random 
 import requests
 import httpx
 from fastapi import FastAPI , Request
@@ -96,6 +96,45 @@ SANJICOOK = [
             "https://te.legra.ph/file/cc81eb7b87d80ef4b18d3.mp4", 
             ]
 
+COSPLAY = [
+    "https://telegra.ph/file/0dee95b727f2028ac1856.jpg",
+    "https://telegra.ph/file/c296eb3d7603a31062159.jpg",
+    "https://telegra.ph/file/baddf7835b291a7fd3cfd.jpg",
+    "https://telegra.ph/file/dfbf2aaa731e1cf00a2e1.jpg",
+    "https://telegra.ph/file/893a0c47cec218d449965.jpg",
+    "https://telegra.ph/file/5d46622a69d528737ddb9.jpg",
+    "https://telegra.ph/file/7adf385229b0169c02e34.jpg",
+    "https://telegra.ph/file/78ddf57462f7fa6c42ff1.jpg",
+    "https://telegra.ph/file/5e599e2c0c4d3bf9788a1.jpg",
+    "https://telegra.ph/file/d785a58fd84d381d79f34.jpg",
+    "https://telegra.ph/file/38fafa65e89166410e71b.jpg",
+    "https://telegra.ph/file/cc00468d7f06ca9be64ad.jpg",
+    "https://telegra.ph/file/7f65dc3eb6938dcabe57c.jpg",
+    "https://telegra.ph/file/60473963519194738eac2.jpg",
+    "https://telegra.ph/file/268d07b949b32da7535de.jpg",
+    "https://telegra.ph/file/89295d505cafa7de1e8a2.jpg",
+    "https://telegra.ph/file/3f0490a35ae8823f0faca.jpg",
+    "https://telegra.ph/file/7d580f55a513bdac0e30d.jpg",
+    "https://telegra.ph/file/90b029ea381302c89aa39.jpg",
+    "https://telegra.ph/file/b7340cfda5e369b03df17.jpg",
+    "https://telegra.ph/file/40b6205209bbe052c30ed.jpg",
+    "https://telegra.ph/file/d95c170a0bb42f28f55fa.jpg",
+    "https://telegra.ph/file/3347ff752fc1e99ed4f97.jpg",
+    "https://telegra.ph/file/0b286c405bf999f858850.jpg",
+    "https://telegra.ph/file/1c1e990e233d6f90b0298.jpg",
+    "https://telegra.ph/file/2dd5ba58116101260b6f8.jpg",
+    "https://telegra.ph/file/dcc3e2ab8f918b72a7e06.jpg",
+    "https://telegra.ph/file/743ef4bc34d7a944b1ba7.jpg",
+    "https://telegra.ph/file/8f3461fecf62b8d11823a.jpg",
+    "https://telegra.ph/file/896ac9ab7486537facd5f.jpg",
+    "https://telegra.ph/file/44ae9d0e02bff35850316.jpg",
+    "https://telegra.ph/file/6e220b68546b1102f748f.jpg",
+    "https://telegra.ph/file/9cd29b3dfb18f7c5d6d40.jpg",
+    "https://telegra.ph/file/e7d8c97856a2c52711a14.jpg",
+    "https://telegra.ph/file/4c1be9254126c2398322f.jpg",
+    "https://telegra.ph/file/68bac98751716c36509ce.jpg",
+            ]
+
 @app.get("/waifuvid")
 def pnude():
     GIF = random.choice(WAIFUVID)
@@ -106,18 +145,7 @@ def gnude():
     GIF = random.choice(SANJICOOK)
     return {"url" : GIF}
 
-@app.get("/gif")
-async def tenor(request: Request, q: str = None):
-    alpha = request.query_params.get('q', '')
-    api_key = "AIzaSyDLY6gywwY_MswUJDdwe_BjtBvE2JZhpMA"
-    lmt = 50
-    ckey = "alpha_coder"
-    url = f"https://tenor.googleapis.com/v2/search?q={alpha}&key={api_key}&client_key={ckey}&limit={lmt}"
-    async with httpx.AsyncClient() as client:
-        response = await client.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            gif_url = data['results'][0]['media_formats']['tinygif']['url']
-            return {'gif_url': gif_url}
-        else:
-            return {'error': 'Failed to fetch the GIF URL.'}
+@app.get("/cosplay")
+def lnude():
+    GIF = random.choice(COSPLAY)
+    return {"url" : GIF}
