@@ -142,7 +142,7 @@ async def m3u8(link):
     '''
     return HTMLResponse(content=x, status_code=200)
             
-# ---------- Cosplay ----------- #
+# ---------- Cosplay ------------- #
 
 WAIFUVID = [
             "https://graph.org/file/4aa0c68c9ff4df2a75790.mp4",
